@@ -148,12 +148,12 @@ if __name__ == "__main__":
 
                         temp_file= path.split("/")[-1].split(".")[0]
                         color = (0, 255, 0)
-                        cv2.rectangle(img, (x1, y1), (x2, y2), color, 2)
+                        cv2.rectangle(img, (x1, y1), (x2, y2), color, 4)
                         cv2.imwrite("output/" + temp_file + ".png", img)
 
                         ######################################
 
-                        #plt.savefig(f"output/{temp_file}.png", bbox_inches="tight", pad_inches=0.0)
+                        #plt.savefig(f"output/{temp_file}.png", bbox_inchedetect.py:157s="tight", pad_inches=0.0)
 
                         bibId=callPopUpImage("output/" + temp_file + ".png")
 
@@ -161,7 +161,9 @@ if __name__ == "__main__":
                             y2.numpy()) + ", " + str(box_h.numpy()) + ", " + str(box_w.numpy()) + ", " + str(bibId)])
                         os.remove("output/" + temp_file + ".png")
 
-                        # Add label
+                        color = (0, 0, 255)
+                        cv2.rectangle(img, (x1, y1), (x2, y2), color, 4)
+                        # Add label                    detect.py:157
                         # plt.text(
                         #     x1,
                         #     y1,
@@ -172,10 +174,14 @@ if __name__ == "__main__":
                         # )
 
             # Save generated image with detections
-            plt.axis("off")
-            plt.gca().xaxis.set_major_locator(NullLocator())
-            plt.gca().yaxis.set_major_locator(NullLocator())
-            filename = path.split("/")[-1].split(".")[0]
-            plt.savefig(f"output/{filename}.png", bbox_inches="tight", pad_inches=0.0)
-            plt.close()
+            # plt.axis("off")
+            # plt.gca().xaxis.set_major_locator(NullLocator())
+            # plt.gca().yaxis.set_major_locator(NullLocator())
+            # filename = path.split("/")[-1].split(".")[0]
+            # plt.savefig(f"output/{filename}.png", bbox_inches="tight", pad_inches=0.0)
+            # plt.close()
+            # file.close()
+            color = (0, 0, 255)
+            cv2.rectangle(img, (x1, y1), (x2, y2), color, 4)
+            cv2.imwrite("output/" + temp_file + ".png", img)
             file.close()
