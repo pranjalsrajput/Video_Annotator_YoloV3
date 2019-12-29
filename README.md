@@ -14,14 +14,14 @@ For bounding box and labels based annotation of videos using YoloV3
 
 4. The system will take each image/frame and will ask to either annotate(Press `Continue`) or not(Press `Skip`)?
 
-<img src="images/Capture1.PNG" alt="drawing" width="1000"/>
+<img src="images/Capture1.png" alt="drawing" width="1000"/>
 
 *Figure 1: Window 1*
 
 5. If `Skip` is pressed, then next image/frame will be taken. If `Continue` is pressed then you will be asked to put the `label` value
  (in our case it's bibId of the runners). You can `Enter` a value or `Quit` if don't want to put any label for that object (in this case runner).
  
- <img src="images/Capture2.PNG" alt="drawing" width="1000"/>
+ <img src="images/Capture2.png" alt="drawing" width="1000"/>
  
  *Figure 2: Window 2*
  
