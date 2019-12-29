@@ -3,8 +3,10 @@
 For bounding box and labels based annotation of videos using YoloV3 
 
 1. Clone the repository and install requirements
-   cd PyTorch-YOLOv3/
-   sudo pip3 install -r requirements.txt
+
+   `cd PyTorch-YOLOv3/`
+   
+   `sudo pip3 install -r requirements.txt`
    
 2. Put your data in `data/samples/` folder
 
