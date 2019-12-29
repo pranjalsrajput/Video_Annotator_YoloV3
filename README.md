@@ -1,4 +1,4 @@
-# Video_Annotator_YoloV3
+# Video_Image_Annotator_YoloV3
 
 For bounding box and labels based annotation of videos using YoloV3 
 
@@ -25,7 +25,7 @@ For bounding box and labels based annotation of videos using YoloV3
  
  *Figure 2: Window 2*
  
-6. In the end, the annotateed images will be saved in the `output` folder.
+6. In the end, the annotateed images will be saved in the `output` folder and a `.csv` file will be saved containing the bounding box and label values.
 
 ## References
 Above repo is retrieved from 
