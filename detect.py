@@ -2,6 +2,8 @@ from __future__ import division
 
 import subprocess
 
+from termcolor import COLORS
+
 from models import *
 from utils.utils import *
 from utils.datasets import *
@@ -23,6 +25,7 @@ import matplotlib.pyplot as plt
 import matplotlib.patches as patches
 from matplotlib.ticker import NullLocator
 from popUpTest2 import *
+import cv2
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
@@ -105,10 +108,16 @@ if __name__ == "__main__":
             print("(%d) Image: '%s'" % (img_i, path))
 
             # Create plot
-            img = np.array(Image.open(path))
-            plt.figure()
-            fig, ax = plt.subplots(1)
-            ax.imshow(img)
+            ###OpenCV2 code
+            img = cv2.imread(path)
+
+            #########PIL code
+            # img = np.array(Image.open(path))
+            # plt.figure()
+            # fig, ax = plt.subplots(1)
+            # ax.imshow(img)
+            ##################
+
             print(path)
             file = open("output/"+path.split('/')[-1]+ ".csv", "w")
             writer = csv.writer(file)
@@ -131,41 +140,27 @@ if __name__ == "__main__":
                         box_h = y2 - y1
                         color = bbox_colors[int(np.where(unique_labels == int(cls_pred))[0])]
                         # Create a Rectangle patch
-                        bbox = patches.Rectangle((x1, y1), box_w, box_h, linewidth=2, edgecolor=color, facecolor="none")
+                        # bbox = patches.Rectangle((x1, y1), box_w, box_h, linewidth=2, edgecolor=color, facecolor="none")
                         # Add the bbox to the plot
-                        ax.add_patch(bbox)
+                        # ax.add_patch(bbox)
 
-                        import cv2
-
-                        # img = cv2.imread(image)
-                        # picName = "output/" + temp_file + "_temp_cv2.png"
+                        ##########  OpenCV2 code #############
 
                         temp_file= path.split("/")[-1].split(".")[0]
+                        color = (0, 255, 0)
+                        cv2.rectangle(img, (x1, y1), (x2, y2), color, 2)
                         cv2.imwrite("output/" + temp_file + ".png", img)
+
+                        ######################################
+
                         #plt.savefig(f"output/{temp_file}.png", bbox_inches="tight", pad_inches=0.0)
-                        # img1 = Image.open("output/" + temp_file + ".png")
-                        # img1.show()
-                        # img1.close()
+
                         bibId=callPopUpImage("output/" + temp_file + ".png")
-                        # p = subprocess.Popen(["display", "output/" + temp_file + ".png"])
-                        # # input
-                        # bibId = 0
-                        # print("Want to enter bibId?")
-                        # input1 = input()
-                        # if (input1 == 'y'):
-                        #     print("Enter bibId=")
-                        #     bibId = int(input())
-                        # else:
-                        #     bibId = 0
+
                         writer.writerow([str(x1.numpy()) + ", " + str(y1.numpy()) + ", " + str(x2.numpy()) + ", " + str(
                             y2.numpy()) + ", " + str(box_h.numpy()) + ", " + str(box_w.numpy()) + ", " + str(bibId)])
-                        #p.kill()
                         os.remove("output/" + temp_file + ".png")
-                        #plt.close()
-                        # img1 = Image.open(path)
-                        # img1.show()
 
-                        # file1.write(str(x1)+", "+str(y1.numpy())+", "+str(x2)+", "+str(y2)+", "+str(box_h)+", "+str(box_w)+" \n")
                         # Add label
                         # plt.text(
                         #     x1,
