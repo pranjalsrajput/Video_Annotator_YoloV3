@@ -1,0 +1,13 @@
+x1, y1, x2, y2, box_w, box_h 
+tensor(1046.9391), tensor(411.0127), tensor(1223.3733), tensor(853.5322), tensor(442.5195), tensor(176.4342) 
+tensor(176.4713), tensor(121.6328), tensor(484.8384), tensor(1137.8414), tensor(1016.2087), tensor(308.3671) 
+tensor(798.0038), tensor(430.0127), tensor(944.8369), tensor(856.0322), tensor(426.0196), tensor(146.8330) 
+tensor(1445.3337), tensor(480.4994), tensor(1533.4741), tensor(765.4233), tensor(284.9240), tensor(88.1404) 
+tensor(601.4238), tensor(336.7913), tensor(773.8869), tensor(985.8993), tensor(649.1080), tensor(172.4631) 
+tensor(437.5776), tensor(229.0869), tensor(635.8706), tensor(1080.5176), tensor(851.4307), tensor(198.2930) 
+tensor(1570.4371), tensor(516.7070), tensor(1648.6649), tensor(727.6628), tensor(210.9559), tensor(78.2278) 
+tensor(-1.4319), tensor(313.6332), tensor(165.0322), tensor(1083.4631), tensor(769.8300), tensor(166.4641) 
+tensor(1370.4927), tensor(516.4822), tensor(1419.4608), tensor(711.4833), tensor(195.0011), tensor(48.9681) 
+tensor(1220.1047), tensor(528.0034), tensor(1292.8262), tensor(706.2047), tensor(178.2013), tensor(72.7214) 
+tensor(1499.6383), tensor(486.3030), tensor(1556.6794), tensor(741.7185), tensor(255.4155), tensor(57.0411) 
+tensor(1300.7253), tensor(527.6472), tensor(1352.2704), tensor(703.8553), tensor(176.2081), tensor(51.5450) 
